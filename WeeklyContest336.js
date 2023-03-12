@@ -19,14 +19,14 @@ var vowelStrings = function (words, left, right) {
 	let vowelList = ['a', 'e', 'i', 'o', 'u'];
 	let vowelCount = 0;
 
-	let startsWithVowel = function(toCheck) {
-		return vowelList.some(function(vowel) {
+	let startsWithVowel = function (toCheck) {
+		return vowelList.some(function (vowel) {
 			return toCheck.startsWith(vowel);
 		});
 	};
 
-	let endsWithVowel = function(toCheck) {
-		return vowelList.some(function(vowel) {
+	let endsWithVowel = function (toCheck) {
+		return vowelList.some(function (vowel) {
 			return toCheck.endsWith(vowel);
 		});
 	};
@@ -40,6 +40,36 @@ var vowelStrings = function (words, left, right) {
 	};
 
 	return vowelCount;
+
+	// Beter solution.
+	// let result = 0;
+	// const vowels = ["a", "e", "i", "o", "u"];
+
+	// for (let i = left; i <= right; i++) {
+	// 	if (
+	// 		vowels.includes(words[i][0]) &&
+	// 		vowels.includes(words[i][words[i].length - 1])
+	// 	) {
+	// 		result++;
+	// 	}
+	// }
+
+	// return result;
+
+	// This one too.
+	// let vowelSet = new Set(['a', 'e', 'i', 'o', 'u']);
+	// let count = 0;
+
+	// for (let i = left; i <= right; i++) {
+	// 	let firstLetter = words[i][0];
+	// 	let lastLetter = words[i][words[i].length - 1];
+
+	// 	if (vowelSet.has(firstLetter) && vowelSet.has(lastLetter)) {
+	// 		count++;
+	// 	};
+	// };
+
+	// return count;
 };
 
 console.log(vowelStrings(['are', 'amy', 'u'], 0, 2));
