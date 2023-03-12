@@ -80,9 +80,11 @@ console.log(vowelStrings(['vo', 'j', 'i', 's', 'i'], 0, 3));
 
 // 6316. Rearrange Array to Maximize Prefix Score
 
-// You are given a 0-indexed integer array nums. You can rearrange the elements of nums to any order (including the given order).
-
-// Let prefix be the array containing the prefix sums of nums after rearranging it. In other words, prefix[i] is the sum of the elements from 0 to i in nums after rearranging it. The score of nums is the number of positive integers in the array prefix.
+// You are given a 0-indexed integer array nums. You can rearrange the elements
+// of nums to any order (including the given order).
+// Let prefix be the array containing the prefix sums of nums after rearranging it.
+// In other words, prefix[i] is the sum of the elements from 0 to i in nums after
+// rearranging it. The score of nums is the number of positive integers in the array prefix.
 
 // Return the maximum score you can achieve.
 /**
@@ -110,9 +112,12 @@ var maxScore = function (nums) {
 // You are given a 0-indexed integer array nums. In one operation, you can:
 
 // Choose two different indices i and j such that 0 <= i, j < nums.length.
-// Choose a non-negative integer k such that the kth bit (0-indexed) in the binary representation of nums[i] and nums[j] is 1.
+// Choose a non-negative integer k such that the kth bit (0-indexed) in the
+// binary representation of nums[i] and nums[j] is 1.
 // Subtract 2k from nums[i] and nums[j].
-// A subarray is beautiful if it is possible to make all of its elements equal to 0 after applying the above operation any number of times.
+
+// A subarray is beautiful if it is possible to make all of its elements equal
+// to 0 after applying the above operation any number of times.
 
 // Return the number of beautiful subarrays in the array nums.
 
@@ -147,9 +152,13 @@ var beautifulSubarrays = function (nums) {
 
 // 6318. Minimum Time to Complete All Tasks
 
-// There is a computer that can run an unlimited number of tasks at the same time. You are given a 2D integer array tasks where tasks[i] = [starti, endi, durationi] indicates that the ith task should run for a total of durationi seconds (not necessarily continuous) within the inclusive time range [starti, endi].
+// There is a computer that can run an unlimited number of tasks at the same time.
+// You are given a 2D integer array tasks where tasks[i] = [starti, endi, durationi]
+// indicates that the ith task should run for a total of durationi seconds (not
+// necessarily continuous) within the inclusive time range [starti, endi].
 
-// You may turn on the computer only when it needs to run a task. You can also turn it off if it is idle.
+// You may turn on the computer only when it needs to run a task. You can also turn
+// it off if it is idle.
 
 // Return the minimum time during which the computer should be turned on to complete all tasks.
 
