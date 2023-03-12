@@ -16,88 +16,35 @@
  * @return {number}
  */
 var vowelStrings = function (words, left, right) {
-	count = 0;
+	let vowelList = ['a', 'e', 'i', 'o', 'u'];
+	let vowelCount = 0;
 
-	for (let i = 0; i < words.length; i++) {
-		if (words[i].length === 1) {
-			if (words[i].indexOf('a') === 0)
-				count++;
-			else if (words[i].indexOf('e') === 0) {
-				//console.log(`the word is ${words[i]}`);
-				count++;
-			} else if (words[i].indexOf('i') === 0)
-				count++;
-			else if (words[i].indexOf('o') === 0)
-				count++;
-			else if (words[i].indexOf('u') === 0) {
-				//console.log(`the word is ${words[i]}`);
-				count++;
-			};
-		} else if (words[i].indexOf('a') === 0) {
-			if (words[i].indexOf('a') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('e') === words[i].length - 1) {
-				//console.log(`the word is ${words[i]}`);
-				count++;
-			} else if (words[i].indexOf('i') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('o') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('u') === words[i].length - 1) {
-				count++;
-			};
-		} else if (words[i].indexOf('e') === 0) {
-			if (words[i].indexOf('a') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('e') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('i') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('o') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('u') === words[i].length - 1)
-				count++;
-		} else if (words[i].indexOf('i') === 0) {
-			if (words[i].indexOf('a') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('e') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('i') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('o') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('u') === words[i].length - 1)
-				count++;
-		} else if (words[i].indexOf('o') === 0) {
-			if (words[i].indexOf('a') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('e') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('i') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('o') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('u') === words[i].length - 1)
-				count++;
-		} else if (words[i].indexOf('u') === 0) {
-			if (words[i].indexOf('a') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('e') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('i') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('o') === words[i].length - 1)
-				count++;
-			else if (words[i].indexOf('u') === words[i].length - 1)
-				count++;
+	let startsWithVowel = function(toCheck) {
+		return vowelList.some(function(vowel) {
+			return toCheck.startsWith(vowel);
+		});
+	};
+
+	let endsWithVowel = function(toCheck) {
+		return vowelList.some(function(vowel) {
+			return toCheck.endsWith(vowel);
+		});
+	};
+
+	for (let i = left; i <= right; i++) {
+		let toCheck = words[i];
+
+		if (startsWithVowel(toCheck)) {
+			if (endsWithVowel(toCheck)) vowelCount++;
 		};
 	};
 
-	return count;
+	return vowelCount;
 };
 
 console.log(vowelStrings(['are', 'amy', 'u'], 0, 2));
-//console.log(vowelStrings(["hey", "aeo", "mu", "ooo", "artro"], 1, 4));
+console.log(vowelStrings(['hey', 'aeo', 'mu', 'ooo', 'artro'], 1, 4));
+console.log(vowelStrings(['vo', 'j', 'i', 's', 'i'], 0, 3));
 
 
 
